@@ -1,12 +1,10 @@
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import ChatList from "@/components/ChatList";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navbar />
-      <main className="flex-1">{children}</main>
-      <Footer />
+    <div className="flex min-h-screen p-5 bg-[#171717] text-white gap-[20px]">
+      <ChatList />
+      <main className="grow text-white">{children}</main>
     </div>
   );
 };
