@@ -1,8 +1,7 @@
-import ChatComponent from "@/components/Chat";
+import React from "react";
 
-const page = async ({ params }: { params: { slug: string } }) => {
-  // const { slug } = await params;
-  return <div>{/* <ChatComponent /> */}</div>;
+const page = () => {
+  return <div>page</div>;
 };
 
 export default page;
