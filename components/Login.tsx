@@ -2,6 +2,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const API = process.env.NEXT_PUBLIC_API_URL;
 
@@ -74,9 +75,12 @@ const Login = () => {
             "Log In"
           )}
         </button>
-        <div className="text-[15px] text-blue-500 font-bold">
+        <Link
+          href={"reset-password"}
+          className="text-[15px] text-blue-500 font-bold"
+        >
           Forgotten your password?
-        </div>
+        </Link>
       </div>
     </form>
   );
