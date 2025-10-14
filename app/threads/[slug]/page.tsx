@@ -51,9 +51,6 @@ export default function ChatPage({ params }: ChatPageProps) {
     fetchCurrentUser();
   }, []);
 
-  console.log("currentUser", currentUser);
-
-  // 🔁 Fetch & Realtime Subscription
   useEffect(() => {
     const fetchMessages = async () => {
       try {
@@ -92,7 +89,6 @@ export default function ChatPage({ params }: ChatPageProps) {
     };
   }, [slug, currentUser.id]);
 
-  // ✉️ Send Message
   const handleSend = async (text: string) => {
     if (!text.trim()) return;
     try {
@@ -103,10 +99,10 @@ export default function ChatPage({ params }: ChatPageProps) {
   };
 
   return (
-    <div className="p-6 max-w-lg mx-auto">
-      <h1 className="text-xl font-semibold mb-4">Chat with {slug}</h1>
+    <div className="max-w-full h-[calc(100vh-40px)] min-h-[800px] flex flex-col gap-[20px]">
+      <h1 className="text-xl font-semibold ">{slug}</h1>
       <MessageList messages={messages} currentUser={currentUser} />
-      <TypingIndicator username={typingUser ?? ""} />
+      {typingUser && <TypingIndicator username={typingUser} />}
       <MessageInput onSend={handleSend} />
     </div>
   );

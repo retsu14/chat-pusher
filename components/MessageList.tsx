@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+
 type Message = {
   id: string | number;
   senderId: string | number;
@@ -19,8 +21,23 @@ export default function MessageList({
   messages,
   currentUser,
 }: MessageListProps) {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.scrollTo({
+        top: container.scrollHeight,
+        behavior: "smooth",
+      });
+    }
+  }, [messages]);
+
   return (
-    <div className="flex flex-col gap-2 overflow-y-auto h-[400px] p-4 border rounded-md">
+    <div
+      ref={scrollContainerRef}
+      className="rounded-lg flex flex-col  gap-2 flex-1 overflow-y-auto p-4 bg-[#1f1f1f] custom-scroll scroll-smooth"
+    >
       {messages.map((msg) => (
         <div
           key={msg.id}
@@ -29,10 +46,10 @@ export default function MessageList({
           }`}
         >
           <div
-            className={`px-3 py-2 rounded-lg ${
+            className={`px-3 py-2 rounded-lg max-w-[75%] break-words ${
               msg.senderId === currentUser.id
                 ? "bg-blue-500 text-white"
-                : "bg-gray-200 text-black"
+                : "bg-[#3b3c3d] text-white"
             }`}
           >
             {msg.text}

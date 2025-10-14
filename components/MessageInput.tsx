@@ -15,16 +15,16 @@ export default function MessageInput({ onSend }: MessageInputProps) {
   };
 
   return (
-    <div className="flex items-center gap-2 mt-4">
+    <div className="flex items-center gap-[20px]">
       <input
-        className="flex-1 border rounded-lg px-3 py-2"
+        className="flex-1 rounded-lg px-3 py-3 bg-[#1f1f1f] focus:outline-none"
         placeholder="Type a message..."
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
       <button
         onClick={handleSend}
-        className="bg-blue-600 text-white px-4 py-2 rounded-lg"
+        className="bg-blue-500 text-white px-4 py-3 rounded-lg"
       >
         Send
       </button>
