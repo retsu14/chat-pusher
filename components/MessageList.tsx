@@ -1,21 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-
-type Message = {
-  id: string | number;
-  senderId: string | number;
-  text: string;
-};
-
-type User = {
-  id: string | number;
-};
-
-interface MessageListProps {
-  messages: Message[];
-  currentUser: User;
-}
+import { Message, User, MessageListProps } from "@/types/message-list";
 
 export default function MessageList({
   messages,
