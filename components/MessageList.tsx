@@ -46,7 +46,7 @@ export default function MessageList({
           }`}
         >
           <div
-            className={`px-3 py-2 rounded-lg max-w-[75%] break-words ${
+            className={`px-3 py-2 rounded-lg max-w-[500px] break-words ${
               msg.senderId === currentUser.id
                 ? "bg-blue-500 text-white"
                 : "bg-[#3b3c3d] text-white"

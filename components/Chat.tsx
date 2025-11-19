@@ -1,17 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import {
-  Send,
-  Reply,
-  Smile,
-  Paperclip,
-  Phone,
-  Video,
-  Info,
-  X,
-  Heart,
-} from "lucide-react";
-import { User, Message } from "@/types/chat-types"; // <-- your types folder
+import { Send, Reply, Smile, Paperclip, X, Heart } from "lucide-react";
+import { Message } from "@/types/chat-types";
 import CallIcon from "./icons/CallIcon";
 import VideoIcon from "./icons/VideoIcon";
 import InfoIcon from "./icons/InfoIcon";
